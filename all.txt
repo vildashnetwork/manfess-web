@@ -1,0 +1,77 @@
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash
+$ git init
+Initialized empty Git repository in C:/Users/BLISSZ CONCEPT GROUP/Desktop/DATA/manfess-admin-dash/.git/
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash (master)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash (master)
+$ git commit -m "first commit"
+[master (root-commit) a2db90b] first commit
+ 1 file changed, 12 insertions(+)
+ create mode 100644 README.md
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash (master)  
+$ git branch -M main
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash (main)    
+$ git remote add origin https://github.com/vildashnetwork/manfess-mobile2.git
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash (main)    
+$ git push -u origin main
+remote: Permission to vildashnetwork/manfess-mobile2.git denied to vildashnetwork.
+fatal: unable to access 'https://github.com/vildashnetwork/manfess-mobile2.git/': The requested URL returned error: 403
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash (main)    
+$ rm -rf .git
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash
+$ ssh-keygen -t ed25519 -C "vildashnetwork02@gmaol.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/BLISSZ CONCEPT GROUP/.ssh/id_ed25519): 
+/c/Users/BLISSZ CONCEPT GROUP/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? 
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash
+$  cat ~/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGiZJWLVPWqJOTHs+m627rlxPfKHKPo6KZZtRkbz7QB9 vildashnetwork02@gmail.com
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash
+$ echo "# manfess-mobile2" >> README.md
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash
+$ git init
+Initialized empty Git repository in C:/Users/BLISSZ CONCEPT GROUP/Desktop/DATA/manfess-admin-dash/.git/
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash (master)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash (master)  
+$ git commit -m "first commit"
+[master (root-commit) d760486] first commit
+ 1 file changed, 13 insertions(+)
+ create mode 100644 README.md
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash (master)
+$ git branch -M main
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash (main)    
+$ git remote add origin git@github.com:vildashnetwork/manfess-mobile2.git
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash (main)    
+$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 643 bytes | 30.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:vildashnetwork/manfess-mobile2.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+BLISSZ CONCEPT GROUP@DESKTOP-7ST1OG5 MINGW64 ~/Desktop/DATA/manfess-admin-dash (main)
+$ 
