@@ -1,0 +1,16 @@
+h1, h2, h3 {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--black);
+}
+
+p {
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+  color: var(--black);
+}
+
+.text-muted {
+  color: var(--light-gray);
+  font-size: var(--font-size-caption);
+}

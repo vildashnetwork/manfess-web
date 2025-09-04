@@ -1,0 +1,57 @@
+
+
+/* 🎨 Color Palette */
+:root {
+  --primary-green: #00A86B;
+  --black: #000000;
+  --white: #FFFFFF;
+  --light-gray: #F5F5F5;
+  --alert-red: #FF4C4C;
+  --warning-yellow: #FFC107;
+  --success-green: #28A745;
+}
+
+/* 🧱 Spacing Units */
+:root {
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+}
+
+/* 🔠 Typography */
+:root {
+  --font-family-base: 'Inter', 'Roboto', sans-serif;
+  --font-size-heading: 24px;
+  --font-size-subheading: 18px;
+  --font-size-body: 14px;
+  --font-size-caption: 12px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+
+/* 📐 Borders & Radius */
+:root {
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-width: 1px;
+}
+
+/* 🧭 Z-Index Layers */
+:root {
+  --z-index-base: 1;
+  --z-index-dropdown: 100;
+  --z-index-modal: 1000;
+  --z-index-toast: 1100;
+}
+
+/* 📱 Breakpoints */
+:root {
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+}

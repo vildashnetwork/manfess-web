@@ -10,7 +10,8 @@ This document outlines how we (Achenyu and teammate) will work together on the  
 - `dev`: Integration branch for staging features
 - `feature/*`: One branch per task or feature
 
-### Examples:
+### Examples :
+
 - `feature/dashboard-ui` → Achenyu working on dashboard
 - `feature/manage-teachers-ui` → Teammate working on teacher management
 
