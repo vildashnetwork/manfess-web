@@ -19,6 +19,8 @@ import Settings from './Pages/Settings/Settings'
 import NotFound from './Pages/NotFound/NotFound'
 import Topnav from './Pages/Shared/Topnav/Topnav'
 import Footer from './Pages/Shared/Footer/Footer'
+import LoginPage from './Pages/Login/Login'
+
 // Teachers
 // Students
 // Attendance
@@ -33,10 +35,12 @@ import Footer from './Pages/Shared/Footer/Footer'
 // import NotFound from './Pages/NotFound'
 function App() {
 
+ //we will stilll look for a more secured method but lets ly low with htis one
+ // my other method can slow down processes for now lets not authenticate the token each time they login
 
   return (
-
-    <div className='page-container'>
+    <>
+    {localStorage.getItem("admin-token") ?  <div className='page-container'>
       <Topnav className="top-nav"></Topnav>
       <div className="inner-grid">
         
@@ -59,7 +63,9 @@ function App() {
 
       <Footer className="footer"></Footer>
 
-    </div>
+    </div>: <LoginPage/>}
+    </>
+   
   )
 }
 
