@@ -1,0 +1,29 @@
+@import '../../styles/compiled.css';
+@import '../Shared/Topnav/Topnav.css';
+.student-card{
+    width: 320px;
+    gap: 12px;
+}
+.student-info{
+    gap: 20px;
+}
+.p{
+    color: var(--darker-gray);
+
+}
+.min-pad{
+    padding: 4px;
+}
+.student-batch {
+    font-size: 12px;
+}
+@media screen and (max-width:768px) {
+ .topheader{
+    display: flex;
+    flex-wrap: wrap;
+ }
+ .student-card{
+    width: 400PX;
+
+ }
+}

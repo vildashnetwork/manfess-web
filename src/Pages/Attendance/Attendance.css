@@ -1,0 +1,24 @@
+.css-6mw38q-MuiTypography-root{
+    display: none !important;
+}
+.css-1xiumhb-MuiPickersLayout-root .MuiPickersLayout-toolbar{
+background-color: var(--success-green);
+color: var(--white);
+}
+.css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root.Mui-selected{
+    background-color: var(--success-green) !important;
+}
+.css-1xiumhb-MuiPickersLayout-root{
+    background-color: var(--white) !important;
+    border: solid var(--border-width) var(--darker-gray);
+    border-radius: 8px;
+}
+.css-1uent87-MuiButtonBase-root-MuiButton-root{
+    color: var(  --primary-green) !important;
+}
+.css-qct7wd-MuiButtonBase-root-MuiPickersDay-root.Mui-selected{
+    background-color: rgb(0, 255, 170) !important;
+}
+/* .css-1s3y67t-MuiTypography-root-MuiDatePickerToolbar-title{
+    background-color: blue;
+} */

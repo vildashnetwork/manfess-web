@@ -1,0 +1,90 @@
+import React from 'react'
+import HomeIcon from '@mui/icons-material/Home';
+import AnalyticsIcon from '@mui/icons-material/Analytics';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import ListIcon from '@mui/icons-material/List';
+import PeopleIcon from '@mui/icons-material/People';
+import SchoolIcon from '@mui/icons-material/School';
+import DateRangeIcon from '@mui/icons-material/DateRange';
+import ImportContactsIcon from '@mui/icons-material/ImportContacts';
+import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
+import SettingsIcon from '@mui/icons-material/Settings';
+import WarningAmberIcon from '@mui/icons-material/WarningAmber';
+function MatricCard() {
+    return (
+        <>
+            <div className="card">
+                <div className="card-title">
+                    <h3 className="card-title-heading"> Total Students</h3>
+                    <div className="card-title-icon text-good">
+                        <SchoolIcon className='mu-icon' />
+                    </div>
+                </div>
+                <div className="number text-good">
+                    1234
+                </div>
+                <div className="average-balance">
+                   <p>+ 15% from last month</p>
+                </div>
+            </div>
+            <div className="card">
+                <div className="card-title">
+                    <h3 className="card-title-heading"> Total Teachers</h3>
+                    <div className="card-title-icon text-good">
+                        <PeopleIcon className='mu-icon' />
+                    </div>
+                </div>
+                <div className="number   text-good">
+                    64
+                </div>
+                <div className="average-balance">
+                   <p> + 5% from last month</p>
+                </div>
+            </div>
+            <div className="card">
+                <div className="card-title">
+                    <h3 className="card-title-heading"> Pending Submission</h3>
+                    <div className="card-title-icon ">
+                        <ImportContactsIcon className='mu-icon' />
+                    </div>
+                </div>
+                <div className="number   text-warning">
+                    74
+                </div>
+                <div className="average-balance">
+                   <p> 3 this week</p>
+                </div>
+            </div>
+            <div className="card">
+                <div className="card-title">
+                    <h3 className="card-title-heading"> Fee <br /> Alerts</h3>
+                    <div className="card-title-icon">
+                        <WarningAmberIcon className='mu-icon text-danger' />
+                    </div>
+                </div>
+                <div className="number   text-danger">
+                    12
+                </div>
+                <div className="average-balance">
+                   <p>overdue payments</p>
+                </div>
+            </div>
+            <div className="card">
+                <div className="card-title">
+                    <h3 className="card-title-heading"> Upcoming Events</h3>
+                    <div className="card-title-icon">
+                        <DateRangeIcon className='mu-icon' />
+                    </div>
+                </div>
+                <div className="number   text-normal">
+                    5
+                </div>
+                <div className="average-balance">
+                   <p>Next Event in 2 days</p>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default MatricCard

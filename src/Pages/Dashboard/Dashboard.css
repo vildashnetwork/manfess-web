@@ -1,0 +1,129 @@
+@import '../../styles/compiled.css';
+
+.dashboard-content {
+    display: flex;
+    flex-direction: column;
+
+    /* border: solid 2px; */
+    max-width: 100%;
+    overflow: hidden;
+
+}
+.card-container{
+    padding-left: 10px;
+    display: flex;
+    gap: 15px;
+    overflow: scroll;
+    flex-wrap: nowrap;
+    /* border: solid red 2px; */
+
+}
+.card-container .card{
+    width: 200px;
+}
+.topheader {
+    display: block;
+    padding: var(--spacing-lg);
+   
+    grid-column-start: 1;
+    grid-column-end: 3;
+    position: relative;
+    top: 0px;
+    /* z-index: var( --z-index-dropdown); */
+
+}
+.card-title{
+    width: 190px;
+    display: flex;
+    align-items: center;
+}
+.card-title-heading{
+    width: 60%;
+    font-size: 20px;
+
+}
+.card-title-icon .mu-icon{
+   font-size: 30px ;
+   /* color: var(  --success-green); */
+}
+.number{
+    font-size: xx-large;
+    text-align: left;
+    padding:var(  --spacing-md) 0 ;
+
+}
+.average-balance{
+    color: var(  --light-gray);
+}
+.submission-table-container{
+    padding: var(--spacing-xl);
+    background-color: var(--white);
+    /* border: solid 2px green; */
+    border-radius: var(--border-radius-md);
+}
+table{
+    border-collapse: collapse;
+    margin-top: var(--spacing-sm);
+}
+thead{
+    /* display: inline-block; */
+    /* padding: 30px; */
+    box-shadow: 0 0 1px var(--border-width) var(--dark-gray);
+}
+th{
+    padding: var(--spacing-sm);
+    background-color: var(--dark-gray);
+    color:rgb(82, 82, 82);
+}
+th,td{
+    padding-inline-end: var(--spacing-xl);
+    padding: 18px;
+    font-weight: var( --font-weight-medium);
+    /* border: 1px solid; */
+}
+tr{
+
+    border-bottom: solid var(--border-width) var(--dark-gray) ;
+}
+/* --------------------------- */
+.status{
+     color: var(--white);
+     display: inline-block;
+     padding: 4px;
+     border-radius: 16px;
+     margin: 16px;
+    
+}
+.flex-container{
+    display: flex;
+    gap: 10px;
+    padding: var(--spacing-md);
+    /* border: 3px solid green; */
+    flex-wrap: wrap;
+}
+.notification-container{
+    background-color: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+}
+.submission-table-container,
+.notification-container{
+    border: solid var(--border-width) var(--dark-gray);
+}
+.message-content{
+    width: 200px;
+    /* border: solid var(--border-width); */
+    padding: 5px;
+}
+.message-unit{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    /* flex-wrap: wrap; */
+}
+@media screen and (max-width:768px) {
+ .card-container{
+    flex-wrap: wrap;
+ }
+}

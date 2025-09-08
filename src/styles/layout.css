@@ -11,9 +11,22 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-lg);
 }
-
+    
 .flex-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.flex-column{
+  display: flex;
+  flex-direction: column;
+
+}
+.flex-row{
+  display: flex;
+  align-items: center;
+
+}
+.inline-icon{
+  padding-inline-start: 0px;
 }

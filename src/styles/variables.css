@@ -9,6 +9,8 @@
   --alert-red: #FF4C4C;
   --warning-yellow: #FFC107;
   --success-green: #28A745;
+  --dark-gray:hsl(0, 0%, 76%);
+  --darker-gray:hsl(0, 0%, 27%);
 }
 
 /* 🧱 Spacing Units */
@@ -17,7 +19,8 @@
   --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
-  --spacing-xl: 32px;
+  --spacing-xl: 40px;
+  
 }
 
 /* 🔠 Typography */

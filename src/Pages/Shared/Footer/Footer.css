@@ -1,0 +1,49 @@
+
+@import '../../../styles/compiled.css';
+footer{
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* border: solid var(  --border-width) var(--black); */
+    box-shadow: 0 0 2px 1px #b8b8b8;
+    background-color: var(--white);
+    z-index: 101;
+}
+.quick-links{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 170px;
+    /* border: 3px solid; */
+}
+.quick-icons{
+    min-width: 170px;
+    /* border: 3px solid; */
+      
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.footer-nav{
+    gap: 30px;
+    padding-inline: 40px;
+     min-width: 170px;
+       display: flex;
+}
+.footer-nav li{
+    list-style: none;
+
+}
+/* .footer-nav .icon,
+.footer-nav  li{
+    cursor: pointer;
+} */
+.footer-nav .icon:hover,
+.footer-nav  li:hover{
+    cursor: pointer;
+    color: var(--primary-green);
+}

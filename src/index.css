@@ -70,3 +70,12 @@ button:focus-visible {
 /* ======================================================================================= */
 /* START FROM HERE  PLEASE LETS LEAVE THIS  DOCUMENT EMPTY WE WILL USE IT AS A COMPILER */
 /* ====================================================================================== */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+body{
+  font-family:  'Inter', 'Roboto', sans-serif;
+}

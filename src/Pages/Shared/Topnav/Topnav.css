@@ -1,0 +1,98 @@
+@import '../../../styles/compiled.css';
+.header{
+    background-color: var(--white);
+    border: solid var(--border-width)  var(--light-gray);
+    height:  64px ;
+    padding: 5px;
+    min-width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-index-dropdown) ;
+  
+}
+.school-logo{
+
+}
+.pages{
+
+}
+.topnav-links{
+    /* background-color:  var(--light-gray); */
+    list-style: none;
+    gap: 20px;
+ 
+}
+.topnav-links a{
+   color: var(--black);
+   font-size: var(  --font-size-subheading);
+   font-weight: var(  --font-weight-normal);
+
+}
+
+.topnav-links a:hover{
+    color: var(  --primary-green);
+}
+.on{
+    color: var(--success-green);
+}
+.search-group{
+    display: flex;
+    border: solid 1px;
+    border-radius: var( --border-radius-sm);
+    box-shadow: 0 0 2px var(--black);
+    padding-inline: 3px;
+    transition: box-shadow .5s linear;
+  
+    /* width: 300px; */
+
+}
+.search-group:focus-within{
+   box-shadow: 0 0 2px var(--success-green); 
+}
+.search-icon{
+  font-size: var(  --font-size-caption);
+  padding-inline: 3px;
+  background-color: var(--white);
+  border: none;
+  cursor: pointer;
+}
+#search{
+    border: none;
+
+}
+.search:focus{
+  outline: none;
+  border-color: white;
+}
+.others{
+    gap: 20px;
+    justify-content: flex-start;
+    padding-inline-end: 30px;
+}
+.action-icon{
+    cursor: pointer;
+}
+.danger{
+    color: var(--alert-red);
+}
+.school-logo{
+    padding-inline: 10px;
+}
+.logo-text{
+    padding-inline-start: 10px;
+    font-size: var(  --font-size-heading) ;
+    font-weight: var( --font-weight-bold);
+    color: var(  --success-green);
+}
+@media screen and (max-width:768px) {
+    .topnav-links
+  
+    {
+        display: none;
+    }
+
+
+    
+}

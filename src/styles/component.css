@@ -2,7 +2,7 @@
   background-color: var(--white);
   border-radius: var(--border-radius-md);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  padding: var(--spacing-md);
+  padding: var(--spacing-xl) var(--spacing-md);
 }
 
 .btn-primary {
@@ -21,4 +21,39 @@
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-caption);
 }
+/* Utility Classes */
+.text-good{
+  color: var( --success-green);
+}
 
+.text-danger{
+  color:  var(--alert-red) ;
+}
+.text-warning{
+  color: var( --warning-yellow);
+}
+.text-normal{
+  color: var(--black);
+}
+
+/* --------------- */
+.tag{
+ padding: 5px 10px;
+ border-radius: var(--border-radius-lg);
+}
+.tag-good{
+ background-color:  var(--success-green) ;
+ color: var(--white);
+}
+.tag-danger{
+  background-color:  var(--alert-red) ;
+  color: var(--white);
+  
+}
+.tag-warning{
+  background-color: var( --warning-yellow);
+  color: var(--darker-gray);
+}
+.tag-normal{
+  background-color: var(--dark-gray);
+}
