@@ -1,20 +1,28 @@
 // src/Pages/Marks/marksroutes/FirstSequence.jsx
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios"
 export default function MockOlevel() {
   const navigate = useNavigate();
   const printableRef = useRef(null);
 
-  const [marksData, setMarksData] = useState([
-    { id: 1, studentName: "John Doe", math: 85, english: 78, science: 92, history: 88 },
-    { id: 2, studentName: "Jane Smith", math: 90, english: 82, science: 87, history: 85 },
-    
-  ]);
-
+  const [marksData, setMarksData] = useState([]);
+ const [loading, setloading] = useState(false)
   const getresult = async ()=>{
-    
+    try{
+      setloading(true)
+ const res = await axios.get("https://manfess-backend.onrender.com/api/students/olevelmock/all")
+       setMarksData(res.data)
+    }catch(error){
+      console.log(error);
+      
+    }finally{
+      setloading(false)
+    }
   }
+  useEffect(()=>{
+    getresult()
+  },[])
 
   const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth < 800 : false);
   const [hoveredRow, setHoveredRow] = useState(null);
@@ -26,19 +34,7 @@ export default function MockOlevel() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  useEffect(() => {
-    // example placeholder for fetching real marks
-    const fetchMarks = async () => {
-      try {
-        // const res = await fetch('/api/marks/first-sequence');
-        // const data = await res.json();
-        // setMarksData(data);
-      } catch (e) {
-        console.error(e);
-      }
-    };
-    fetchMarks();
-  }, []);
+ 
 
   const getAverage = (s) => {
     const sum = (s.math || 0) + (s.english || 0) + (s.science || 0) + (s.history || 0);
@@ -53,8 +49,8 @@ export default function MockOlevel() {
       return;
     }
 
-    const headers = ["Student Name", "Math", "English", "Science", "History", "Average"];
-    const rows = marksData.map((s) => [s.studentName, s.math, s.english, s.science, s.history, getAverage(s)]);
+    const headers = ["Student Name", "Class", "Subject", "Subject_Code", "Mark", "Grade"];
+    const rows = marksData.map((s) => [s.studentname, s.Class, s.Subject, s.Subject_Code, s.Mark, s.Grade]);
  
     const csvLines = [headers.join(","), ...rows.map((r) => r.join(","))];
     const csvContent = csvLines.join("\n");
@@ -226,7 +222,7 @@ export default function MockOlevel() {
     textAlign: "center",
     marginTop: 20,
   };
-
+const [query, setquery] = useState("")
   return (
     <div style={containerStyle}>
       <header style={headerStyle}>
@@ -284,11 +280,11 @@ export default function MockOlevel() {
               onMouseLeave={() => setHoveredBtn(null)}
               onClick={() => alert("Add student — replace with modal or form logic")}
             >
-              Add Student
+              Download And Publish 
             </button>
           </div>
 
-          <div style={{ color: "#0b2540", fontWeight: 700 }}>{marksData.length} records</div>
+          <div style={{ color: "#0b2540", fontWeight: 700 }}>{ loading? "loading..":`${marksData.length} records`}</div>
         </div>
 <div className="search-group">
           <button className="search-icon flex-between">
@@ -299,6 +295,8 @@ export default function MockOlevel() {
             id="search"
             type="text"
             maxLength={60}
+            value={query}
+            onChange={(e)=> setquery(e.target.value)}
             placeholder="Search students ..."
           />
         </div>
@@ -309,27 +307,33 @@ export default function MockOlevel() {
                 <thead>
                   <tr>
                     <th style={thStyle}>Student Name</th>
-                    <th style={thStyle}>Math</th>
-                    <th style={thStyle}>English</th>
-                    <th style={thStyle}>Science</th>
-                    <th style={thStyle}>History</th>
-                    <th style={thStyle}>Average</th>
+                    <th style={thStyle}>Class</th>
+                    <th style={thStyle}>Subject</th>
+                    <th style={thStyle}>Subject_Code</th>
+                    <th style={thStyle}>Mark</th>
+                    <th style={thStyle}>Grade</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {marksData.map((s) => (
+                  {marksData
+                 .filter(item =>
+  item.studentname.toLowerCase().includes(query.toLowerCase()) || 
+  item.Subject.toLowerCase().includes(query.toLowerCase()) 
+)
+
+                  .map((s) => (
                     <tr
                       key={s.id}
                       style={Object.assign({}, rowStyle(hoveredRow === s.id))}
                       onMouseEnter={() => setHoveredRow(s.id)}
                       onMouseLeave={() => setHoveredRow(null)}
                     >
-                      <td style={tdStyle}>{s.studentName}</td>
-                      <td style={tdStyle}>{s.math}</td>
-                      <td style={tdStyle}>{s.english}</td>
-                      <td style={tdStyle}>{s.science}</td>
-                      <td style={tdStyle}>{s.history}</td>
-                      <td style={tdStyle}>{getAverage(s)}</td>
+                      <td style={tdStyle}>{s.studentname}</td>
+                      <td style={tdStyle}>{s.Class}</td>
+                      <td style={tdStyle}>{s.Subject}</td>
+                      <td style={tdStyle}>{s.Subject_Code}</td>
+                      <td style={tdStyle}>{s.Mark}</td>
+                      <td style={tdStyle}>{s.Grade}</td>
                     </tr>
                   ))}
                 </tbody>
