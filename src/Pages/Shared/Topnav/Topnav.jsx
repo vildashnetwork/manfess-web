@@ -7,7 +7,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import LogoutIcon from "@mui/icons-material/Logout";
 import axios from "axios";
 
-const imgUrl = "src/assets/logo.png";
+import imgUrl from "../../../assets/logo.png";
 
 function Topnav() {
   const [admin, setAdmin] = useState(null);

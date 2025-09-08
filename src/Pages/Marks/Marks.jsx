@@ -45,14 +45,36 @@ export default function Marks() {
 
   // inline styles: main theme uses greens and soft neutrals
   const styles = {
+   page: {
+    minHeight: "100vh",
+    width: "100%",   
+    maxWidth: "1000px",     
+    margin: "0 auto",     
+    padding: "24px",
+    boxSizing: "border-box",
+    fontFamily: "'Inter', Roboto, system-ui, -apple-system, 'Segoe UI', Arial",
+    background: "linear-gradient(180deg, #f7fbf8 0%, #eef7ee 100%)",
+    color: "#05201a",
+    zIndex: 1000,
+  },
+
+
+  '@media (max-width: 768px)': {
     page: {
-      minHeight: "100vh",
-      padding: 24,
-      boxSizing: "border-box",
-      fontFamily: "'Inter', Roboto, system-ui, -apple-system, 'Segoe UI', Arial",
-      background: "linear-gradient(180deg, #f7fbf8 0%, #eef7ee 100%)",
-      color: "#05201a",
-    },
+      padding: "16px",
+      width: "100%",   
+    maxWidth: "1000px", 
+    }
+  },
+
+  '@media (max-width: 480px)': {
+    page: {
+      padding: "12px",
+      fontSize: "14px",
+      width: "100% !important",   
+      maxWidth: "1000px !important", 
+    }
+  },
     header: {
       display: "flex",
       justifyContent: "space-between",
@@ -224,6 +246,7 @@ export default function Marks() {
       navigate(path);
     }, 160);
   };
+ 
 
   return (
     <div style={styles.page}>

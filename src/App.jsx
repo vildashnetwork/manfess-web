@@ -20,6 +20,7 @@ import NotFound from './Pages/NotFound/NotFound'
 import Topnav from './Pages/Shared/Topnav/Topnav'
 import Footer from './Pages/Shared/Footer/Footer'
 import LoginPage from './Pages/Login/Login'
+import MockOlevel from './Pages/Marks/marksroutes/MockOlevel'
 
 // Teachers
 // Students
@@ -54,6 +55,7 @@ function App() {
             <Route path='/marks' element={<Marks />} ></Route>
             <Route path='/reports' element={<Reports />} ></Route>
             <Route path='/settings' element={<Settings />} ></Route>
+             <Route path='/marks/mock-olevel' element={<MockOlevel />} ></Route>
             <Route path='*' element={<NotFound />} ></Route>
           </Routes>
 
