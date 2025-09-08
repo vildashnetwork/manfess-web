@@ -1,30 +1,56 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import EmailIcon from '@mui/icons-material/Email';
+import axios from 'axios';
 
 function TeacherCard() {
+  const [teachers, setTeachers] = useState([])
+
+  const fetchTeachers = async () => {
+    try {
+      const res = await axios.get("https://manfess-backend.onrender.com/api/teachers")
+      setTeachers(res.data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    fetchTeachers()
+  }, [])
+
   return (
     <>
-    <div className="card teacher-card">
-        <div className="teacher-info">
-          <div className="teacher-image">
-            <img src="src\\assets\\logo.png" alt="" srcset="" width={50} />
+      {teachers.map((data, idx) => (
+        <div className="card teacher-card" key={idx}>
+          <div className="teacher-info">
+            <div className="teacher-image">
+              <img src="src/assets/logo.png" alt="Teacher" width={50} />
+            </div>
+            <div className='teacher-info-details'>
+              <h3 className='teacher-name'>{data?.Name}</h3>
+              <h5>
+                <span>DepartMent :</span>{" "}
+                <span className='teacher-name'>{data?.department || "Biology"}</span>
+              </h5>
+            </div>
           </div>
-          <div className='teacher-info-details'>
-            <h3 className='teacher-name'>Dr. Emily Carter</h3>
-            <h5><span>Subject :</span> <span className='teacher-name'>Biology</span></h5>
-          </div>
-         
-        </div>
-         <div className='light-gray-p'><span>Term :</span> <span>3rd Term</span></div>
-         <div className='light-gray-p'><span>Submission Status:</span> <span className=' tag tag-good'>On time</span></div>
-         <hr className='line'/>
-         <div className="actions flex">
-          <button className=' button btn-neutral'>View Profile</button>
-          <button className='button btn-good'> <EmailIcon/>Send Message</button>
-         </div>
-    </div>
 
-      
+          <div className='light-gray-p'>
+            <span>Number :</span> <span>{data?.Number || "3rd Term"}</span>
+          </div>
+          {/* <div className='light-gray-p'>
+            <span>Submission Status:</span>{" "}
+            <span className='tag tag-good'>{data?.Status || "On time"}</span>
+          </div> */}
+          <hr className='line' />
+          <div className="actions flex">
+            <button className='button btn-neutral'>{data?.subjects}</button>
+            <button className='button btn-good'>
+              <EmailIcon /> {data?.Name}
+            </button>
+          </div>
+        </div>
+      ))}
     </>
   )
 }
