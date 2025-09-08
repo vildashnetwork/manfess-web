@@ -21,6 +21,10 @@ import Topnav from './Pages/Shared/Topnav/Topnav'
 import Footer from './Pages/Shared/Footer/Footer'
 import LoginPage from './Pages/Login/Login'
 import MockOlevel from './Pages/Marks/marksroutes/MockOlevel'
+import MockAlevel from "./Pages/Marks/marksroutes/MockAlevel"
+import PreMockOlevel from "./Pages/Marks/marksroutes/PreMockOlevel"
+import PreMockAlevel from "./Pages/Marks/marksroutes/PreMockAlevel"
+
 
 // Teachers
 // Students
@@ -56,6 +60,10 @@ function App() {
             <Route path='/reports' element={<Reports />} ></Route>
             <Route path='/settings' element={<Settings />} ></Route>
              <Route path='/marks/mock-olevel' element={<MockOlevel />} ></Route>
+         <Route path='/marks/mock-alevel' element={<MockAlevel/>} ></Route>
+            <Route path='/marks/premock-olevel' element={<PreMockOlevel/>} ></Route>
+            <Route path='/marks/premock-alevel' element={<PreMockAlevel/>} ></Route>
+           
             <Route path='*' element={<NotFound />} ></Route>
           </Routes>
 

@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"
-export default function MockOlevel() {
+export default function PreMockOlevel() {
   const navigate = useNavigate();
   const printableRef = useRef(null);
 
@@ -11,7 +11,7 @@ export default function MockOlevel() {
   const getresult = async ()=>{
     try{
       setloading(true)
- const res = await axios.get("https://manfess-backend.onrender.com/api/students/olevelmock/all")
+ const res = await axios.get("https://manfess-backend.onrender.com/api/students/alevelpremock/all")
        setMarksData(res.data)
     }catch(error){
       console.log(error);

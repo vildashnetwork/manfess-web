@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"
-export default function MockOlevel() {
+export default function MockAlevel() {
   const navigate = useNavigate();
   const printableRef = useRef(null);
 
@@ -11,7 +11,7 @@ export default function MockOlevel() {
   const getresult = async ()=>{
     try{
       setloading(true)
- const res = await axios.get("https://manfess-backend.onrender.com/api/students/olevelmock/all")
+ const res = await axios.get("https://manfess-backend.onrender.com/api/students/alevelmock/all")
        setMarksData(res.data)
     }catch(error){
       console.log(error);
@@ -77,7 +77,7 @@ export default function MockOlevel() {
 
   const containerStyle = {
     minHeight: "100vh",
-    background: "linear-gradient(180deg, #516874ff 0%, #7a5555ff 100%)",
+    background: "linear-gradient(180deg, #f3f7f9 0%, #ffffff 100%)",
     fontFamily: "Arial, Helvetica, sans-serif",
     color: "#0f172a",
     display: "flex",
@@ -227,7 +227,7 @@ const [query, setquery] = useState("")
     <div style={containerStyle}>
       <header style={headerStyle}>
         <div style={headerLeftStyle}>
-          <h1 style={headerTitleStyle}>Olevel Mock</h1>
+          <h1 style={headerTitleStyle}>First Sequence</h1>
           <div style={headerSubStyle}>Large, clear layout — occupies most of the page and shrinks gracefully on small screens.</div>
         </div>
 
