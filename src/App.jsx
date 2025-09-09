@@ -61,8 +61,10 @@ function App() {
             <Route path='/settings' element={<Settings />} ></Route>
              <Route path='/marks/mock-olevel' element={<MockOlevel />} ></Route>
          <Route path='/marks/mock-alevel' element={<MockAlevel/>} ></Route>
+         
             <Route path='/marks/premock-olevel' element={<PreMockOlevel/>} ></Route>
             <Route path='/marks/premock-alevel' element={<PreMockAlevel/>} ></Route>
+
            
             <Route path='*' element={<NotFound />} ></Route>
           </Routes>
