@@ -146,3 +146,11 @@ git branch -d feature-branch
 git add .
 git commit -m "Updated index.js and .gitignore"
 git push origin main
+
+
+
+
+git pull origin main
+git commit -am "Li Blissz"
+git push origin main
+$ git remote set-url origin  git@github.com:vildashnetwork/manfess-web.git
