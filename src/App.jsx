@@ -24,8 +24,12 @@ import MockOlevel from './Pages/Marks/marksroutes/MockOlevel'
 import MockAlevel from "./Pages/Marks/marksroutes/MockAlevel"
 import PreMockOlevel from "./Pages/Marks/marksroutes/PreMockOlevel"
 import PreMockAlevel from "./Pages/Marks/marksroutes/PreMockAlevel"
-
-
+import FirstSequence from "./Pages/Marks/marksroutes/Firstsequence"
+import Secondsequence from './Pages/Marks/marksroutes/Secondsequence'
+import Thirdsequence from './Pages/Marks/marksroutes/Thirdsequence'
+import Forthsequence from './Pages/Marks/marksroutes/Forthsequence'
+import Fifthsequence from './Pages/Marks/marksroutes/Fifthsequence'
+import Sixthsequence from './Pages/Marks/marksroutes/Sixthsequence'
 // Teachers
 // Students
 // Attendance
@@ -62,8 +66,17 @@ function App() {
              <Route path='/marks/mock-olevel' element={<MockOlevel />} ></Route>
          <Route path='/marks/mock-alevel' element={<MockAlevel/>} ></Route>
             <Route path='/marks/premock-olevel' element={<PreMockOlevel/>} ></Route>
-            <Route path='/marks/premock-olevel' element={<PreMockAlevel/>} ></Route>
-           
+            <Route path='/marks/premock-alevel' element={<PreMockAlevel/>} ></Route>
+
+
+            <Route path='/marks/first-sequence' element={<FirstSequence/>} ></Route>
+             <Route path='/marks/second-sequence' element={<Secondsequence/>} ></Route>
+
+              <Route path='/marks/third-sequence' element={<Thirdsequence/>} ></Route> 
+              <Route path='/marks/fourth-sequence' element={<Forthsequence/>} ></Route>
+            <Route path='/marks/fifth-sequence' element={<Fifthsequence/>} ></Route>
+             <Route path='/marks/sixth-sequence' element={<Sixthsequence/>} ></Route>
+
             <Route path='*' element={<NotFound />} ></Route>
           </Routes>
 
