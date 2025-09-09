@@ -4,13 +4,16 @@ import axios from 'axios';
 
 function TeacherCard() {
   const [teachers, setTeachers] = useState([])
-
+const [loading, setloading] = useState(false)
   const fetchTeachers = async () => {
     try {
+      setloading(true)
       const res = await axios.get("https://manfess-backend.onrender.com/api/teachers")
       setTeachers(res.data)
     } catch (err) {
       console.log(err)
+    }finally{
+      setloading(false)
     }
   }
 
@@ -20,6 +23,7 @@ function TeacherCard() {
 
   return (
     <>
+    {loading && <p>loading...</p>}
       {teachers.map((data, idx) => (
         <div className="card teacher-card" key={idx}>
           <div className="teacher-info">

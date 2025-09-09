@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import './Students.css'
 import TeacherCard from '../../Components/Teachers/TeacherCard';
 import StudentCard from '../../Components/Students/StudentCard';
 
+
 function Students() {
+const [search,setsearch] = useState("")
   return (
     <>
+   { <>
       <div className="topheader flex-between">
         <h2>Students</h2>
         {/* <div className='others-teachers flex-between'> */}
@@ -17,7 +20,7 @@ function Students() {
               <button className="search-icon flex-between">
                 <SearchIcon />
               </button>
-              <input className='search' id='search' type="text" maxLength={60} placeholder='Search students, teachers, ...' />
+              <input className='search' id='search' value={search} onChange={(e)=>setsearch(e.target.value)} type="text" maxLength={60} placeholder='Search students, teachers, ...' />
             </div>
             <button className="button btn-neutral  btn-neutral">
             <FilterAltIcon style={{
@@ -48,14 +51,12 @@ function Students() {
       </div>
       <div className='teacher-grid'>
 
-        <StudentCard />
-        <StudentCard />
-        <StudentCard />
-        <StudentCard />
-        <StudentCard />
+        <StudentCard  query={search}/>
+    
       </div>
     </>
-
+    }
+</>
   )
 }
 
