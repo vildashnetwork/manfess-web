@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import HomeIcon from '@mui/icons-material/Home';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import DashboardIcon from '@mui/icons-material/Dashboard';
@@ -10,7 +10,47 @@ import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
 import SettingsIcon from '@mui/icons-material/Settings';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
+import axios from 'axios';
 function MatricCard() {
+
+    const [students, setStudents] = useState([]);
+    const [loading, setloading] = useState(false)
+
+
+
+    const [teachers, setTeachers] = useState([])
+
+  const fetchTeachers = async () => {
+    try {
+      setloading(true)
+      const res = await axios.get("https://manfess-backend.onrender.com/api/teachers")
+      setTeachers(res.data)
+    } catch (err) {
+      console.log(err)
+    }finally{
+      setloading(false)
+    }
+  }
+
+      const fetchStudents = async () => {
+        try {
+            setloading(true)
+          const res = await axios.get(
+            "https://manfess-backend.onrender.com/api/students/all/students"
+          );
+          setStudents(res.data);
+        } catch (err) {
+          console.log(err);
+        }finally{
+            setloading(false)
+        }
+      };
+    
+      useEffect(() => {
+        fetchStudents();
+        fetchTeachers()
+      }, []);
+    
     return (
         <>
             <div className="card">
@@ -21,10 +61,10 @@ function MatricCard() {
                     </div>
                 </div>
                 <div className="number text-good">
-                    1234
+                    {loading? "?.." :students?.length}
                 </div>
                 <div className="average-balance">
-                   <p>+ 15% from last month</p>
+                   <p>total students</p>
                 </div>
             </div>
             <div className="card">
@@ -35,10 +75,10 @@ function MatricCard() {
                     </div>
                 </div>
                 <div className="number   text-good">
-                    64
+                    {loading? "?..": teachers?.length}
                 </div>
                 <div className="average-balance">
-                   <p> + 5% from last month</p>
+                   <p> all teachers</p>
                 </div>
             </div>
             <div className="card">
