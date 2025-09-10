@@ -1,31 +1,29 @@
-
 {
   "name": "manfess-admin-dash",
   "private": true,
   "version": "0.0.0",
   "type": "module",
- "scripts": {
-  "prebuild": "npm install",
-  "build": "npx vite build",
-  "postbuild": "echo '/* /index.html 200' > dist/_redirects",
-  "dev": "vite",
-  "lint": "eslint .",
-  "preview": "vite preview"
-},
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "postbuild": "echo '/* /index.html 200' > dist/_redirects",
+    "start": "serve -s dist"
+  },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.2",
     "@mui/material": "^7.3.2",
     "@mui/x-date-pickers": "^8.11.1",
+    "@vitejs/plugin-react": "^5.0.0",
     "axios": "^1.11.0",
     "date-fns": "^4.1.0",
     "dayjs": "^1.11.18",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.8.2",
-    "vite": "^7.1.2",
-    "@vitejs/plugin-react": "^5.0.0"
+    "serve": "^14.2.5",
+    "vite": "^7.1.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
