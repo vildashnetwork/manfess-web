@@ -37,7 +37,7 @@ const [loading, setloading] = useState(false)
           <div className="student-info flex-row">
             <div className="image">
               <img
-                src="src/assets/logo.png"
+                src="/logo.png"
                 alt="student"
                 width={50}
               />
