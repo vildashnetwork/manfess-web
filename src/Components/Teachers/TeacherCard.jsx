@@ -28,7 +28,7 @@ const [loading, setloading] = useState(false)
         <div className="card teacher-card" key={idx}>
           <div className="teacher-info">
             <div className="teacher-image">
-              <img src="src/assets/logo.png" alt="Teacher" width={50} />
+              <img src="/logo.png" alt="Teacher" width={50} />
             </div>
             <div className='teacher-info-details'>
               <h3 className='teacher-name'>{data?.Name}</h3>
