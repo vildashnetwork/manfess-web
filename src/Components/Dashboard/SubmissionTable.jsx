@@ -66,7 +66,7 @@ function SubmissionTable({ search }) {
                 {/* <td>{item.DOB}</td> */}
                 <td>{item.Department}</td>
                 <td className="status tag-good">{item.level}</td>
-                <td>{item.BalanceLeft}</td>
+                <td>{item.BalanceLeft}frs</td>
               </tr>
             ))}
         </tbody>
