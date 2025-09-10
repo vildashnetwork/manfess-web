@@ -26,6 +26,7 @@ import MockOlevel from './Pages/Marks/marksroutes/MockOlevel'
 import MockAlevel from "./Pages/Marks/marksroutes/MockAlevel"
 import PreMockOlevel from "./Pages/Marks/marksroutes/PreMockOlevel"
 import PreMockAlevel from "./Pages/Marks/marksroutes/PreMockAlevel"
+<<<<<<< HEAD
 // import FirstSequence from './Pages/Marks/marksroutes/Firstsequence'
 // import Secondsequence from './Pages/Marks/marksroutes/Secondsequence'
 // import Thirdsequence from './Pages/Marks/marksroutes/Thirdsequence'
@@ -34,6 +35,14 @@ import PreMockAlevel from "./Pages/Marks/marksroutes/PreMockAlevel"
 // import Sixthsequence from './Pages/Marks/marksroutes/Sixthsequence'
 
 
+=======
+import FirstSequence from "./Pages/Marks/marksroutes/Firstsequence"
+import Secondsequence from './Pages/Marks/marksroutes/Secondsequence'
+import Thirdsequence from './Pages/Marks/marksroutes/Thirdsequence'
+import Forthsequence from './Pages/Marks/marksroutes/Forthsequence'
+import Fifthsequence from './Pages/Marks/marksroutes/Fifthsequence'
+import Sixthsequence from './Pages/Marks/marksroutes/Sixthsequence'
+>>>>>>> 8a92fd9d250282c8fb6f7cb460a31d377db7bcf8
 // Teachers
 // Students
 // Attendance
@@ -63,7 +72,7 @@ function App() {
             <Route path='/' exact element={<Dashboard />} ></Route>
             <Route path='/teachers' element={<Teachers />} ></Route>
             <Route path='/students' element={<Students />} ></Route>
-            <Route path='/attendance' element={<Attendance />} ></Route>
+            {/* <Route path='/attendance' element={<Attendance />} ></Route> */}
             <Route path='/marks' element={<Marks />} ></Route>
             <Route path='/reports' element={<Reports />} ></Route>
             <Route path='/settings' element={<Settings />} ></Route>
@@ -78,7 +87,19 @@ function App() {
             <Route path='/marks/premock-olevel' element={<PreMockOlevel/>} ></Route>
             <Route path='/marks/premock-alevel' element={<PreMockAlevel/>} ></Route>
 
+<<<<<<< HEAD
            
+=======
+
+            <Route path='/marks/first-sequence' element={<FirstSequence/>} ></Route>
+             <Route path='/marks/second-sequence' element={<Secondsequence/>} ></Route>
+
+              <Route path='/marks/third-sequence' element={<Thirdsequence/>} ></Route> 
+              <Route path='/marks/fourth-sequence' element={<Forthsequence/>} ></Route>
+            <Route path='/marks/fifth-sequence' element={<Fifthsequence/>} ></Route>
+             <Route path='/marks/sixth-sequence' element={<Sixthsequence/>} ></Route>
+
+>>>>>>> 8a92fd9d250282c8fb6f7cb460a31d377db7bcf8
             <Route path='*' element={<NotFound />} ></Route>
           </Routes>
 

@@ -1,3 +1,4 @@
+/* DO NOT TOUCH ----- MU COLOR TO MATCH THEME */
 .css-6mw38q-MuiTypography-root{
     display: none !important;
 }
@@ -21,4 +22,46 @@ color: var(--white);
 }
 /* .css-1s3y67t-MuiTypography-root-MuiDatePickerToolbar-title{
     background-color: blue;
+} */
+
+
+/* START CODING HERE */
+.attendance-summary{
+    display: flex;
+    padding: 30px;
+    min-height: 400px;
+    min-width: 430px;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    /* padding-right: 400px; */
+
+}
+.calendar-attendance{
+    display: flex;
+    flex-wrap: wrap;
+}
+.white-bg{
+    background-color: white;
+    border-radius: var(  --border-radius-md) ;
+    border: solid var(--border-width) var(--darker-gray);
+    width: 100%;
+}
+.attendance-card{
+    background-color:var(--light-gray) !important;
+}
+
+@media screen and (max-width:768px) {
+.attendance-summary{
+    /* width: 400px; */
+    /* padding-right: 400px; */
+
+}
+}
+/* @media screen and (min-width:769px) {
+.attendance-summary{
+    height: 400px;
+    width: minMAX(500px, 100%);
+    padding-right: 400px;
+
+}
 } */

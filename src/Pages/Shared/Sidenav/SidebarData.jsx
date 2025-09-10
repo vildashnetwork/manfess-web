@@ -25,11 +25,11 @@ export const  SidebarData = [
     icon: <SchoolIcon />,
     link:"/students"
     },
-    {
-    title:"Attendance",
-    icon: <DateRangeIcon/>,
-    link:"/attendance"
-    },
+    // {
+    // title:"Attendance",
+    // icon: <DateRangeIcon/>,
+    // link:"/attendance"
+    // },
     {
     title:"Marks",
     icon: <ImportContactsIcon/>,
