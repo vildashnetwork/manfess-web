@@ -89,3 +89,7 @@ Use shared styles from:
 ---
 
 Let’s keep communication open, commit often, and build clean UI together.
+
+
+to revert  
+# git reset --hard ORIG_HEAD
