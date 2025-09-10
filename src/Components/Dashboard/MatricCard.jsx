@@ -16,7 +16,27 @@ function MatricCard() {
     const [students, setStudents] = useState([]);
     const [loading, setloading] = useState(false)
 
+  const [noti, setNoti] = useState([]);
 
+  const getNoti = async () => {
+    try {
+      setloading(true);
+      const res = await axios.get(
+        "https://manfess-backend.onrender.com/api/notifications"
+      );
+      setNoti(res.data);
+    } catch (err) {
+      console.log("====================================");
+      console.log(err);
+      console.log("====================================");
+    } finally {
+      setloading(false);
+    }
+  };
+
+  useEffect(() => {
+    getNoti();
+  }, []);
 
     const [teachers, setTeachers] = useState([])
 
@@ -104,7 +124,8 @@ function MatricCard() {
                     </div>
                 </div>
                 <div className="number   text-danger">
-                    12
+                    {loading && "?.."}
+                    {noti.length}
                 </div>
                 <div className="average-balance">
                    <p>pushed to thier app</p>

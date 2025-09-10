@@ -42,7 +42,7 @@ function Dashboard() {
           <h2>Notification</h2>
 
         </div>
-          <p>System Alerts and important messages</p>
+          <p>Teachers Alerts and important messages</p>
         <NototificationPanel />
       </aside>
       </div>
