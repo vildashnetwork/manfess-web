@@ -4,13 +4,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "npx vite build",
-    "postbuild": "echo '/* /index.html 200' > dist/_redirects",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+ "scripts": {
+  "prebuild": "npm install",
+  "build": "npx vite build",
+  "postbuild": "echo '/* /index.html 200' > dist/_redirects",
+  "dev": "vite",
+  "lint": "eslint .",
+  "preview": "vite preview"
+},
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
