@@ -3,6 +3,9 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import Calendar from '../../Components/Attendance/Calendar';
 import './Attendance.css'
 import dayjs from 'dayjs';
+function Attendances(){
+  return(<div>Hello</div>)
+}
 function Attendance() {
   const [date,setDate] = useState(dayjs(new Date()).format("DD MMM, YYYY"))
   return (
@@ -37,14 +40,14 @@ function Attendance() {
         <h3 style={{marginBottom:"-20px"}}>Attendance Calendar</h3> 
         <p className="p">View Attendance records  and daily Summary</p>
       </div>
-      <div className='teacher-grid'>
+      <div className='teacher-grid white-bg'>
         <div className="flex-row">
-          <Calendar></Calendar>
+          <Calendar  />
 
         </div>
-        <div>
+        {/* <div className='attendance-summary'>
           <h3>Summary <span>{date}</span> </h3>
-        </div>
+        </div> */}
 
       </div>
 
