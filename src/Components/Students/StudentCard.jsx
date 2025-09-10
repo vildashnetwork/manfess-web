@@ -68,13 +68,13 @@ const [loading, setloading] = useState(false)
             <div className="tag flex-row">
               <CheckIcon className="inline-icon" /> Fees
             </div>
-            {student.FeesComplete == "yes"?
-            <div className="tag flex-row tag-good">
-              <AccessTimeIcon className="inline-icon" /> Paid
-            </div>:
+            {student.BalanceLeft > 0 ?  
             <div className="tag flex-row tag-danger">
               <RemoveCircleOutlineIcon className="inline-icon" />
               Deptor
+            </div>:
+            <div className="tag flex-row tag-good">
+              <AccessTimeIcon className="inline-icon" /> Paid
             </div>
             }
           </div>

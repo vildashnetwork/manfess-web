@@ -51,6 +51,7 @@ function MatricCard() {
         fetchTeachers()
       }, []);
     
+      const filterdeptor = students.filter(item=> item.BalanceLeft>0)
     return (
         <>
             <div className="card">
@@ -83,21 +84,21 @@ function MatricCard() {
             </div>
             <div className="card">
                 <div className="card-title">
-                    <h3 className="card-title-heading"> Pending Submission</h3>
+                    <h3 className="card-title-heading">Deptors</h3>
                     <div className="card-title-icon ">
                         <ImportContactsIcon className='mu-icon' />
                     </div>
                 </div>
                 <div className="number   text-warning">
-                    74
+                   {loading? "?..": filterdeptor?.length}
                 </div>
                 <div className="average-balance">
-                   <p> 3 this week</p>
+                   <p>all deptors in school</p>
                 </div>
             </div>
             <div className="card">
                 <div className="card-title">
-                    <h3 className="card-title-heading"> Fee <br /> Alerts</h3>
+                    <h3 className="card-title-heading"> Teachers <br /> Alerts</h3>
                     <div className="card-title-icon">
                         <WarningAmberIcon className='mu-icon text-danger' />
                     </div>
@@ -106,7 +107,7 @@ function MatricCard() {
                     12
                 </div>
                 <div className="average-balance">
-                   <p>overdue payments</p>
+                   <p>pushed to thier app</p>
                 </div>
             </div>
             <div className="card">
