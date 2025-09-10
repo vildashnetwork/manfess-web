@@ -154,3 +154,4 @@ git pull origin main
 git commit -am "Li Blissz"
 git push origin main
 $ git remote set-url origin  git@github.com:vildashnetwork/manfess-web.git
+git push --force origin main
