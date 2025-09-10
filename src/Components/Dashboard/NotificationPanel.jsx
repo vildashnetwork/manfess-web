@@ -1,48 +1,52 @@
-import React from 'react'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 function NotificationPanel() {
-    return (
-        <>
-            <br />
-            <br />
-            <div className='message-unit '>
-                <div className='message-content'>
-                   <h4>Notification Title</h4> 
-                    <p>Description or details</p>
-                </div>
-                <div className='message-type tag tag-good'>
-                    <span className=''>Info</span>
-                </div>
-            </div>
-            <div className='message-unit '>
-                <div className='message-content'>
-                   <h4>New Student Enrollment</h4> 
-                    <p>Achenyu Bk joins Form 3B</p>
-                </div>
-                <div className='message-type tag tag-good'>
-                    <span className=''>Info</span>
-                </div>
-            </div>
-            <div className='message-unit '>
-                <div className='message-content'>
-                   <h4>Upcoming Meeting</h4> 
-                    <p>PTA Meeting today with Uppersixth parents</p>
-                </div>
-                <div className='message-type tag tag-warning'>
-                    <span className=''>Info</span>
-                </div>
-            </div>
-            <div className='message-unit '>
-                <div className='message-content'>
-                   <h4>Security Updates</h4> 
-                    <p>Your system is missing crytical security updates</p>
-                </div>
-                <div className='message-type tag tag-danger'>
-                    <span className=''>Crttical</span>
-                </div>
-            </div>
-        </>
-    )
+  const [noti, setNoti] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const getNoti = async () => {
+    try {
+      setLoading(true);
+      const res = await axios.get(
+        "https://manfess-backend.onrender.com/api/notifications"
+      );
+      setNoti(res.data);
+    } catch (err) {
+      console.log("====================================");
+      console.log(err);
+      console.log("====================================");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getNoti();
+  }, []);
+
+  return (
+    <>
+      <br />
+      <br />
+      {loading && <p>Loading...</p>}
+
+      {noti.length === 0 && !loading && <p>No notifications available</p>}
+
+      {noti.map((item, idx) => (
+        <div key={idx} className="message-unit">
+          <div className="message-content">
+            <h4>{item?.title || `Notification ${idx + 1}`} -  <span>{new Date(item?.Date).toLocaleDateString()}</span>
+</h4>
+            <p>{item?.message}</p>
+          </div>
+          <div className="message-type tag tag-good">
+           <span>{idx+1}</span>
+          </div>
+        </div>
+      ))}
+    </>
+  );
 }
 
-export default NotificationPanel
+export default NotificationPanel;
