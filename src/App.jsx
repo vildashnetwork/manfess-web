@@ -77,8 +77,8 @@ function App() {
             <Route path='/reports' element={<Reports />} ></Route>
             <Route path='/settings' element={<Settings />} ></Route>
              <Route path='/marks/mock-olevel' element={<MockOlevel />} ></Route>
-         {/* <Route path='/marks/mock-alevel' element={<MockAlevel/>} ></Route>
-         <Route path='/marks/first-sequence' element={<FirstSequence/>} ></Route>
+         <Route path='/marks/mock-alevel' element={<MockAlevel/>} ></Route>
+         {/*<Route path='/marks/first-sequence' element={<FirstSequence/>} ></Route>
          <Route path='/marks/second-sequence' element={<Secondsequence/>} ></Route>
          <Route path='/marks/third-sequence' element={<Thirdsequence/>} ></Route>
          <Route path='/marks/fourth-sequence' element={<Forthsequence/>} ></Route>

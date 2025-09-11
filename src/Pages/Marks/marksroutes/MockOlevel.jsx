@@ -1,9 +1,9 @@
 // src/Pages/Marks/marksroutes/FirstSequence.jsx
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import axios from "axios"
 export default function MockOlevel() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const printableRef = useRef(null);
 
   const [marksData, setMarksData] = useState([]);
@@ -66,14 +66,14 @@ export default function MockOlevel() {
     URL.revokeObjectURL(url);
   };
 
-  const handlePrint = () => {
-    window.print();
-  };
+  // const handlePrint = () => {
+  //   window.print();
+  // };
 
-  const handleExportPDF = () => {
+  // const handleExportPDF = () => {
  
-    window.print();
-  };
+  //   window.print();
+  // };
 
   const containerStyle = {
     minHeight: "100vh",
@@ -114,18 +114,18 @@ export default function MockOlevel() {
     opacity: 0.95,
   };
 
-  const navButtonStyle = (hovered) => ({
-    background: "#ffffff",
-    color: "#0f9d58",
-    border: "none",
-    padding: "10px 14px",
-    borderRadius: 10,
-    cursor: "pointer",
-    fontWeight: 700,
-    boxShadow: hovered ? "0 8px 20px rgba(16,185,129,0.18)" : "0 4px 10px rgba(16,185,129,0.12)",
-    transform: hovered ? "translateY(-2px)" : "translateY(0)",
-    transition: "all 180ms ease",
-  });
+  // const navButtonStyle = (hovered) => ({
+  //   background: "#ffffff",
+  //   color: "#0f9d58",
+  //   border: "none",
+  //   padding: "10px 14px",
+  //   borderRadius: 10,
+  //   cursor: "pointer",
+  //   fontWeight: 700,
+  //   boxShadow: hovered ? "0 8px 20px rgba(16,185,129,0.18)" : "0 4px 10px rgba(16,185,129,0.12)",
+  //   transform: hovered ? "translateY(-2px)" : "translateY(0)",
+  //   transition: "all 180ms ease",
+  // });
 
   const mainContentWrap = {
     width: "95%",
@@ -222,6 +222,71 @@ export default function MockOlevel() {
     textAlign: "center",
     marginTop: 20,
   };
+const [load, setLoad] = useState(false)
+   const downloadslip = async (e) => {
+    e.preventDefault();
+    if(navigator.onLine){
+ try {
+      setLoad(true);
+      await axios.get("https://manfess-backend.onrender.com/api/students/print/olevelmock/print-slips", {
+        responseType: 'blob'
+      }).then(response => {
+        // Create blob link to download
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'student_results.pdf');
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+      });
+    } catch (error) {
+      console.log('====================================');
+      console.log(error);
+      alert(error+ "maybe your computer network is slow")
+      console.log('====================================');
+    } finally {
+      setLoad(false);
+    }
+    }else{
+      alert("your need to connect your computer to the internet")
+      return;
+    }
+   
+  };
+const [load1, setLoad1] = useState(false)
+   const downloadresults = async (e) => {
+    e.preventDefault();
+    if(navigator.onLine){
+ try {
+      setLoad1(true);
+      await axios.get("https://manfess-backend.onrender.com/api/students/print/olevelmock", {
+        responseType: 'blob'
+      }).then(response => {
+        // Create blob link to download
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'student_results.pdf');
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+      });
+    } catch (error) {
+      console.log('====================================');
+      console.log(error);
+      alert(error+ "maybe your computer network is slow")
+      console.log('====================================');
+    } finally {
+      setLoad1(false);
+    }
+    }else{
+      alert("your need to connect your computer to the internet")
+      return;
+    }
+   
+  };
+
 const [query, setquery] = useState("")
   return (
     <div style={containerStyle}>
@@ -231,17 +296,19 @@ const [query, setquery] = useState("")
           <div style={headerSubStyle}>Large, clear layout — occupies most of the page and shrinks gracefully on small screens.</div>
         </div>
 
-        <div>
-          <button
-            style={navButtonStyle(hoveredBtn === "back")}
-            onMouseEnter={() => setHoveredBtn("back")}
-            onMouseLeave={() => setHoveredBtn(null)}
-            onClick={() => navigate(-1)}
-            aria-label="Back to dashboard"
-          >
-            Back to Dashboard
-          </button>
+        {/* <div>
+        <button
+          style={Object.assign({}, actionButton("solid", hoveredBtn === "print"))}
+          onMouseEnter={() => setHoveredBtn("print")}
+          onMouseLeave={() => setHoveredBtn(null)}
+          onClick={downloadslip}
+          disabled={load}
+        >
+          {load ? "Loading..." : "Download Students Slip"}
+        </button>
+        
         </div>
+         */}
       </header>
 
       <main style={mainContentWrap}>
@@ -249,11 +316,12 @@ const [query, setquery] = useState("")
           <div style={actionsLeft}>
             <button
               style={Object.assign({}, actionButton("solid", hoveredBtn === "print"))}
-              onMouseEnter={() => setHoveredBtn("print")}
-              onMouseLeave={() => setHoveredBtn(null)}
-              onClick={handlePrint}
+              
+              onClick={downloadslip}
+              disabled={load}
             >
-              Print
+               {load? "loading... if this takes time check your computer's internet": "Download Slips"}
+             
             </button>
 
             <button
@@ -265,22 +333,21 @@ const [query, setquery] = useState("")
               Export CSV
             </button>
 
-            <button
+            {/* <button
               style={Object.assign({}, actionButton("ghost", hoveredBtn === "pdf"))}
               onMouseEnter={() => setHoveredBtn("pdf")}
               onMouseLeave={() => setHoveredBtn(null)}
               onClick={handleExportPDF}
             >
               Export PDF
-            </button>
+            </button> */}
 
             <button
               style={Object.assign({}, actionButton("solid", hoveredBtn === "add"))}
-              onMouseEnter={() => setHoveredBtn("add")}
-              onMouseLeave={() => setHoveredBtn(null)}
-              onClick={() => alert("Add student — replace with modal or form logic")}
+              onClick={downloadresults}
+              disabled={load1}
             >
-              Download And Publish 
+            {load1? "loading... if this takes time check your computer's internet": "Download Result"}
             </button>
           </div>
 
