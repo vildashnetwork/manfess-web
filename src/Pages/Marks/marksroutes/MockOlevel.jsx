@@ -59,7 +59,7 @@ export default function MockOlevel() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "first-sequence-marks.csv";
+    a.download = "olevel-mock-macks.csv";
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -81,6 +81,7 @@ export default function MockOlevel() {
     fontFamily: "Arial, Helvetica, sans-serif",
     color: "#0f172a",
     display: "flex",
+    width: "1000px" ,
     flexDirection: "column",
     alignItems: "stretch",
     marginTop: "50px"
