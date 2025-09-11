@@ -74,6 +74,7 @@ export default function PreMockOlevel() {
     color: "#0f172a",
     display: "flex",
     flexDirection: "column",
+    width: "1000px" ,
     alignItems: "stretch",
     marginTop: "50px"
   };
