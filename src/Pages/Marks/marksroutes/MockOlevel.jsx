@@ -236,7 +236,7 @@ const [load, setLoad] = useState(false)
         const url = window.URL.createObjectURL(new Blob([response.data]));
         const link = document.createElement('a');
         link.href = url;
-        link.setAttribute('download', 'student_results.pdf');
+        link.setAttribute('download', 'MOCK_OLEVEL_RESULTSSLIP_2025_2026.pdf');
         document.body.appendChild(link);
         link.click();
         link.parentNode.removeChild(link);
@@ -268,7 +268,7 @@ const [load1, setLoad1] = useState(false)
         const url = window.URL.createObjectURL(new Blob([response.data]));
         const link = document.createElement('a');
         link.href = url;
-        link.setAttribute('download', 'student_results.pdf');
+        link.setAttribute('download', 'MOCK_OLEVEL_2025_2026.pdf');
         document.body.appendChild(link);
         link.click();
         link.parentNode.removeChild(link);

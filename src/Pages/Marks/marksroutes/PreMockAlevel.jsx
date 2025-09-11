@@ -237,14 +237,14 @@ export default function PreMockOlevel() {
         if(navigator.onLine){
      try {
           setLoad(true);
-          await axios.get("https://manfess-backend.onrender.com/api/students/print/mockalevel/print-slips", {
+          await axios.get("https://manfess-backend.onrender.com/api/students/print/alevelpremock/print-slips", {
             responseType: 'blob'
           }).then(response => {
             // Create blob link to download
             const url = window.URL.createObjectURL(new Blob([response.data]));
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', 'student_results.pdf');
+            link.setAttribute('download', 'PREMOCK_ALEVEL_RESULTSSLIP_2025_2026.pdf');
             document.body.appendChild(link);
             link.click();
             link.parentNode.removeChild(link);
@@ -269,14 +269,14 @@ export default function PreMockOlevel() {
         if(navigator.onLine){
      try {
           setLoad1(true);
-          await axios.get("https://manfess-backend.onrender.com/api/students/print/mockalevel", {
+          await axios.get("https://manfess-backend.onrender.com/api/students/print/alevelpremock", {
             responseType: 'blob'
           }).then(response => {
             // Create blob link to download
             const url = window.URL.createObjectURL(new Blob([response.data]));
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', 'student_results.pdf');
+            link.setAttribute('download', 'PREMOCK_ALEVEL_RESULTS_2025_2026.pdf');
             document.body.appendChild(link);
             link.click();
             link.parentNode.removeChild(link);
