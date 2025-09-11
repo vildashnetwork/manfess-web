@@ -66,15 +66,7 @@ export default function PreMockOlevel() {
     URL.revokeObjectURL(url);
   };
 
-  const handlePrint = () => {
-    window.print();
-  };
-
-  const handleExportPDF = () => {
- 
-    window.print();
-  };
-
+  
   const containerStyle = {
     minHeight: "100vh",
     background: "linear-gradient(180deg, #516874ff 0%, #7a5555ff 100%)",
@@ -222,6 +214,80 @@ export default function PreMockOlevel() {
     textAlign: "center",
     marginTop: 20,
   };
+
+
+
+
+
+
+
+
+
+
+  const [load, setLoad] = useState(false)
+     const downloadslip = async (e) => {
+      e.preventDefault();
+      if(navigator.onLine){
+   try {
+        setLoad(true);
+        await axios.get("https://manfess-backend.onrender.com/api/students/print/premockolevel/print-slips", {
+          responseType: 'blob'
+        }).then(response => {
+          // Create blob link to download
+          const url = window.URL.createObjectURL(new Blob([response.data]));
+          const link = document.createElement('a');
+          link.href = url;
+          link.setAttribute('download', 'student_results.pdf');
+          document.body.appendChild(link);
+          link.click();
+          link.parentNode.removeChild(link);
+        });
+      } catch (error) {
+        console.log('====================================');
+        console.log(error);
+        alert(error+ "maybe your computer network is slow")
+        console.log('====================================');
+      } finally {
+        setLoad(false);
+      }
+      }else{
+        alert("your need to connect your computer to the internet")
+        return;
+      }
+     
+    };
+  const [load1, setLoad1] = useState(false)
+     const downloadresults = async (e) => {
+      e.preventDefault();
+      if(navigator.onLine){
+   try {
+        setLoad1(true);
+        await axios.get("https://manfess-backend.onrender.com/api/students/print/premockolevel", {
+          responseType: 'blob'
+        }).then(response => {
+          // Create blob link to download
+          const url = window.URL.createObjectURL(new Blob([response.data]));
+          const link = document.createElement('a');
+          link.href = url;
+          link.setAttribute('download', 'student_results.pdf');
+          document.body.appendChild(link);
+          link.click();
+          link.parentNode.removeChild(link);
+        });
+      } catch (error) {
+        console.log('====================================');
+        console.log(error);
+        alert(error+ "maybe your computer network is slow")
+        console.log('====================================');
+      } finally {
+        setLoad1(false);
+      }
+      }else{
+        alert("your need to connect your computer to the internet")
+        return;
+      }
+     
+    };
 const [query, setquery] = useState("")
   return (
     <div style={containerStyle}>
@@ -247,15 +313,7 @@ const [query, setquery] = useState("")
       <main style={mainContentWrap}>
         <div style={actionsBar}>
           <div style={actionsLeft}>
-            <button
-              style={Object.assign({}, actionButton("solid", hoveredBtn === "print"))}
-              onMouseEnter={() => setHoveredBtn("print")}
-              onMouseLeave={() => setHoveredBtn(null)}
-              onClick={handlePrint}
-            >
-              Print
-            </button>
-
+       
             <button
               style={Object.assign({}, actionButton("ghost", hoveredBtn === "csv"))}
               onMouseEnter={() => setHoveredBtn("csv")}
@@ -265,22 +323,22 @@ const [query, setquery] = useState("")
               Export CSV
             </button>
 
-            <button
-              style={Object.assign({}, actionButton("ghost", hoveredBtn === "pdf"))}
-              onMouseEnter={() => setHoveredBtn("pdf")}
-              onMouseLeave={() => setHoveredBtn(null)}
-              onClick={handleExportPDF}
-            >
-              Export PDF
-            </button>
-
-            <button
+             <button
               style={Object.assign({}, actionButton("solid", hoveredBtn === "add"))}
-              onMouseEnter={() => setHoveredBtn("add")}
-              onMouseLeave={() => setHoveredBtn(null)}
-              onClick={() => alert("Add student — replace with modal or form logic")}
+              onClick={downloadresults}
+              disabled={load1}
             >
-              Download And Publish 
+            {load1? "loading... if this takes time check your computer's internet": "Download Result"}
+            </button>
+          
+             <button
+              style={Object.assign({}, actionButton("solid", hoveredBtn === "print"))}
+              
+              onClick={downloadslip}
+              disabled={load}
+            >
+               {load? "loading... if this takes time check your computer's internet": "Download Slips"}
+             
             </button>
           </div>
 
