@@ -65,10 +65,12 @@ function MatricCard() {
             setloading(false)
         }
       };
-    
+
+        
       useEffect(() => {
         fetchStudents();
         fetchTeachers()
+   
       }, []);
     
       const filterdeptor = students.filter(item=> item.BalanceLeft>0)
@@ -133,16 +135,16 @@ function MatricCard() {
             </div>
             <div className="card">
                 <div className="card-title">
-                    <h3 className="card-title-heading"> Upcoming Events</h3>
+                    <h3 className="card-title-heading">Notifications</h3>
                     <div className="card-title-icon">
                         <DateRangeIcon className='mu-icon' />
                     </div>
                 </div>
                 <div className="number   text-normal">
-                    5
+                  {noti.length}
                 </div>
                 <div className="average-balance">
-                   <p>Next Event in 2 days</p>
+                   <p>all notifications</p>
                 </div>
             </div>
         </>
