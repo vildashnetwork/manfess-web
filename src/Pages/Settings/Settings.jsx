@@ -4,11 +4,12 @@ import axios from "axios";
 export default function Settings() {
   const [formData, setFormData] = useState({
     Day: "",
-    "04:30-05:20": "",
-    "05:20-06:10": "",
-    "06:10-07:00": "",
-    "07:00-07:50": "",
-    "07:50-09:00": "",
+    "04:30-05:15": "",
+  "05:15-06:00":"",
+  "06:00-06:45":"",
+  "06:45-07:30":"",
+  "07:30-08:15":"",
+  "08:15-09:00":"",
     Teachers: ""
   });
 
@@ -17,13 +18,15 @@ export default function Settings() {
   const [allTeachers, setAllTeachers] = useState([]);
   const [teachersLoading, setTeachersLoading] = useState(false);
 
-  const timeSlots = [
-    "04:30-05:20",
-    "05:20-06:10",
-    "06:10-07:00",
-    "07:00-07-50",
-    "07-50-09-00"
-  ];
+ const timeSlots = [
+  "04:30-05:15",
+  "05:15-06:00",
+  "06:00-06:45",
+  "06:45-07:30",
+  "07:30-08:15",
+  "08:15-09:00"
+];
+
 
   const daysOfWeek = [
     "Monday",
@@ -81,11 +84,12 @@ export default function Settings() {
       alert("Record inserted successfully!")
       setFormData({
         Day: "",
-        "04:30-05:20": "",
-        "05:20-06:10": "",
-        "06:10-07:00": "",
-        "07:00-07-50": "",
-        "07-50-09-00": "",
+         "04:30-05:15":"",
+  "05:15-06:00":"",
+  "06:00-06:45":"",
+  "06:45-07:30":"",
+  "07:30-08:15":"",
+  "08:15-09:00":"",
         Teachers: ""
       });
     } catch (error) {
