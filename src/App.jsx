@@ -42,6 +42,7 @@ import Thirdsequence from './Pages/Marks/marksroutes/Thirdsequence'
 import Forthsequence from './Pages/Marks/marksroutes/Forthsequence'
 import Fifthsequence from './Pages/Marks/marksroutes/Fifthsequence'
 import Sixthsequence from './Pages/Marks/marksroutes/Sixthsequence'
+import TimeTables from './Pages/Settings/TimeTables'
 
 // Teachers
 // Students
@@ -96,7 +97,7 @@ function App() {
               <Route path='/marks/fourth-sequence' element={<Forthsequence/>} ></Route>
             <Route path='/marks/fifth-sequence' element={<Fifthsequence/>} ></Route>
              <Route path='/marks/sixth-sequence' element={<Sixthsequence/>} ></Route>
-
+<Route path='/timetables' element={<TimeTables/>} ></Route>
 
             <Route path='*' element={<NotFound />} ></Route>
           </Routes>

@@ -41,6 +41,11 @@ export const  SidebarData = [
     link:"/reports"
     },
     {
+    title:"Time Tables",
+    icon: <SignalCellularAltIcon/>,
+    link:"/timetables"
+    },
+    {
     title:"Settings",
     icon: <SettingsIcon/>,
     link:"/settings"
