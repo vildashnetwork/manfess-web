@@ -9,6 +9,7 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
 import SettingsIcon from '@mui/icons-material/Settings';
+import TableChartIcon from '@mui/icons-material/TableChart';
 export const  SidebarData = [
     {
     title:"Dashboard",
@@ -42,7 +43,7 @@ export const  SidebarData = [
     },
     {
     title:"Time Tables",
-    icon: <SignalCellularAltIcon/>,
+    icon: <TableChartIcon/>,
     link:"/timetables"
     },
     {

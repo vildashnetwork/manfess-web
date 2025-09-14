@@ -3,7 +3,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import axios from "axios";
-
+import StudentCardPlaceHolder from "./StudentCardPlaceHolder";
 function StudentCard({query}) {
   const [students, setStudents] = useState([]);
 const [loading, setloading] = useState(false)
@@ -27,7 +27,7 @@ const [loading, setloading] = useState(false)
 
   return (
     <>
-    {loading && <p>loading...</p>}
+    {loading && <StudentCardPlaceHolder/>}
       {students
       .filter(item=>
         item.FirstName.toLowerCase().includes(query.toLowerCase())

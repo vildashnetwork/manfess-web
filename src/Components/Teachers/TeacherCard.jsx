@@ -1,62 +1,76 @@
-import React, { useEffect, useState } from 'react'
-import EmailIcon from '@mui/icons-material/Email';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import EmailIcon from "@mui/icons-material/Email";
+import axios from "axios";
+import TeacherCardPlaceHolder from "./TeacherCardPlaceHolder";
+import useNetworkStatus from "../../Hooks/useOnlineStatus";
 
 function TeacherCard() {
-  const [teachers, setTeachers] = useState([])
-const [loading, setloading] = useState(false)
+  const [teachers, setTeachers] = useState([]);
+  const [loading, setloading] = useState(false);
+  const isOnline = useNetworkStatus()
   const fetchTeachers = async () => {
     try {
-      setloading(true)
-      const res = await axios.get("https://manfess-backend.onrender.com/api/teachers")
-      setTeachers(res.data)
+      setloading(true);
+      const res = await axios.get(
+        "https://manfess-backend.onrender.com/api/teachers"
+      );
+      setTeachers(res.data);
     } catch (err) {
-      console.log(err)
-    }finally{
-      setloading(false)
+      console.log(err);
+    } finally {
+      setloading(false);
     }
-  }
+  };
 
   useEffect(() => {
-    fetchTeachers()
-  }, [])
+    fetchTeachers();
+  }, []);
+
+// isOnline && setloading(true)
 
   return (
+    
     <>
-    {loading && <p>loading...</p>}
+      {loading && (
+        //  <p>loading...</p>
+        <TeacherCardPlaceHolder />
+ 
+      )}
       {teachers.map((data, idx) => (
         <div className="card teacher-card" key={idx}>
           <div className="teacher-info">
             <div className="teacher-image">
               <img src="/logo.png" alt="Teacher" width={50} />
             </div>
-            <div className='teacher-info-details'>
-              <h3 className='teacher-name'>{data?.Name}</h3>
+            <div className="teacher-info-details">
+              <h3 className="teacher-name">{data?.Name}</h3>
               <h5>
                 <span>DepartMent :</span>{" "}
-                <span className='teacher-name'>{data?.department || "Biology"}</span>
+                <span className="teacher-name">
+                  {data?.department || "Biology"}
+                </span>
               </h5>
             </div>
           </div>
 
-          <div className='light-gray-p'>
+          <div className="light-gray-p">
             <span>Number :</span> <span>{data?.Number || "3rd Term"}</span>
           </div>
           {/* <div className='light-gray-p'>
             <span>Submission Status:</span>{" "}
             <span className='tag tag-good'>{data?.Status || "On time"}</span>
           </div> */}
-          <hr className='line' />
+          <hr className="line" />
           <div className="actions flex">
-            <button className='button btn-neutral'>{data?.subjects}</button>
-            <button className='button btn-good'>
+            <button className="button btn-neutral">{data?.subjects}</button>
+            <button className="button btn-good">
               <EmailIcon /> {data?.Name}
             </button>
           </div>
         </div>
       ))}
     </>
-  )
+  );
 }
 
-export default TeacherCard
+export default TeacherCard;

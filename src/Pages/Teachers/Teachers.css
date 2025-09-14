@@ -54,3 +54,8 @@
     align-items: center;
     gap: 5px;
 }
+.skeleton-btn-container{
+    display: flex;
+    gap: var(--spacing-md);
+    /* border: solid red; */
+}

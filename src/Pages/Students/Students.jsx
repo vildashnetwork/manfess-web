@@ -4,8 +4,8 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import './Students.css'
 import TeacherCard from '../../Components/Teachers/TeacherCard';
 import StudentCard from '../../Components/Students/StudentCard';
-
-
+import DownloadIcon from '@mui/icons-material/Download';
+import IosShareIcon from '@mui/icons-material/IosShare';
 function Students() {
 const [search,setsearch] = useState("")
   return (
@@ -29,13 +29,13 @@ const [search,setsearch] = useState("")
             Filters
             </button>
             <button className="button btn-neutral  btn-good">
-            <FilterAltIcon style={{
+            <DownloadIcon style={{
               fontSize:"18px",
             }}/>
              Download Reports
             </button>
             <button className="button btn-neutral  btn-good">
-            <FilterAltIcon style={{
+            <IosShareIcon style={{
               fontSize:"18px",
             }}/>
               Update Status
